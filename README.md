@@ -9,7 +9,7 @@ Setting up Plaid, Coinbase OAuth, Prisma, and optional SES notifications can inv
 
 If you want a second pass on your setup, you can buy a `$12` manual setup review:
 
-[Buy the setup review](https://buy.stripe.com/8x27sNaZP691dWKbjU8so07)
+[Buy the setup review](https://buy.stripe.com/9B614m8vxeZi80z63vaMU06)
 
 The review covers environment variables, redirect URI alignment, database setup, local run steps, and email notification readiness. It is not financial advice, tax advice, investment advice, or account troubleshooting. Do not send bank credentials, Coinbase credentials, Plaid secrets, account balances, transaction exports, database files, screenshots with private financial data, or production tokens.
 
