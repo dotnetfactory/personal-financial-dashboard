@@ -3,7 +3,15 @@
 A dashboard to track all your financial accounts in one place using Plaid API and Coinbase integration. Features include bank account balance tracking, cryptocurrency holdings, daily updates, and email notifications.
 ![image](https://github.com/user-attachments/assets/d0d8ba2c-d540-444e-a739-7f5797c4dd20)
 
+## Paid Setup Review
 
+Setting up Plaid, Coinbase OAuth, Prisma, and optional SES notifications can involve several small config mismatches. The free [setup readiness checklist](docs/setup-readiness-checklist.md) covers the main items to verify before connecting real accounts.
+
+If you want a second pass on your setup, you can buy a `$12` manual setup review:
+
+[Buy the setup review](https://buy.stripe.com/8x27sNaZP691dWKbjU8so07)
+
+The review covers environment variables, redirect URI alignment, database setup, local run steps, and email notification readiness. It is not financial advice, tax advice, investment advice, or account troubleshooting. Do not send bank credentials, Coinbase credentials, Plaid secrets, account balances, transaction exports, database files, screenshots with private financial data, or production tokens.
 
 ## Prerequisites
 
@@ -35,22 +43,26 @@ A dashboard to track all your financial accounts in one place using Plaid API an
 ### 3. Environment Setup
 
 1. Clone this repository:
+
    ```bash
    git clone <repository-url>
    cd personal-finance-dashboard
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Copy the example environment file:
+
    ```bash
    cp .env.example .env
    ```
 
 4. Update `.env` with your credentials:
+
    ```env
    # Plaid API credentials
    PLAID_CLIENT_ID="your_client_id"
@@ -80,6 +92,7 @@ A dashboard to track all your financial accounts in one place using Plaid API an
 ### 5. Running the Application
 
 1. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -89,11 +102,13 @@ A dashboard to track all your financial accounts in one place using Plaid API an
 ### 6. Connecting Accounts
 
 1. For Bank Accounts:
+
    - Click the "Connect Bank Account" button in the dashboard
    - Follow the Plaid Link flow to connect your bank accounts
    - Your accounts should appear in the dashboard immediately
 
 2. For Coinbase:
+
    - Click the "Connect Coinbase" button in the dashboard
    - You'll be redirected to Coinbase to authorize the application
    - After authorization, your Coinbase accounts and balances will appear in the dashboard
@@ -108,22 +123,25 @@ If you want to receive daily balance updates via email, follow these additional 
 ### 1. Email Setup (Amazon SES)
 
 Add the following to your `.env` file to enable email notifications:
-   ```env
-   EMAIL_HOST=email-smtp.us-east-1.amazonaws.com
-   EMAIL_PORT=587
-   EMAIL_USER=your_ses_smtp_username
-   EMAIL_PASSWORD=your_ses_smtp_password
-   EMAIL_FROM=your_verified_email@domain.com
-   ```
+
+```env
+EMAIL_HOST=email-smtp.us-east-1.amazonaws.com
+EMAIL_PORT=587
+EMAIL_USER=your_ses_smtp_username
+EMAIL_PASSWORD=your_ses_smtp_password
+EMAIL_FROM=your_verified_email@domain.com
+```
 
 ### 2. Setting Up the Daily Update Script
 
 1. Make the refresh script executable:
+
    ```bash
    chmod +x scripts/refresh-data.sh
    ```
 
 2. Create a logs directory:
+
    ```bash
    mkdir logs
    ```
@@ -136,14 +154,17 @@ Add the following to your `.env` file to enable email notifications:
 ### 3. Setting Up the Cron Job
 
 1. Open your crontab:
+
    ```bash
    crontab -e
    ```
 
 2. Add the following line to run the script daily at 6 AM:
+
    ```bash
    0 6 * * * /full/path/to/scripts/refresh-data.sh >> /full/path/to/logs/refresh.log 2>&1
    ```
+
    Replace `/full/path/to` with your actual project path.
 
 3. Save and exit the editor
@@ -156,6 +177,7 @@ Add the following to your `.env` file to enable email notifications:
 ### Troubleshooting
 
 1. Check the logs for any errors:
+
    ```bash
    tail -f logs/refresh.log
    ```
@@ -181,6 +203,7 @@ Add the following to your `.env` file to enable email notifications:
 Prisma Studio provides a modern interface to view and edit your database data:
 
 1. Start Prisma Studio:
+
    ```bash
    npx prisma studio
    ```
