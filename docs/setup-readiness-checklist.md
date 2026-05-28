@@ -42,6 +42,6 @@ Use this checklist before connecting real accounts or moving beyond a local deve
 
 If you want a manual setup review, use the `$12` checkout link:
 
-https://buy.stripe.com/8x27sNaZP691dWKbjU8so07
+https://buy.stripe.com/9B614m8vxeZi80z63vaMU06
 
 Include only sanitized setup context such as your repo URL, deploy URL, environment names, error messages with secrets removed, or a short description of the blocker. Do not send private financial records or credentials.
